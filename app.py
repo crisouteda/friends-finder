@@ -1,13 +1,10 @@
 from flask import Blueprint, Flask, render_template, request, redirect, url_for, session, logging
-#from wtforms import Form, StringField, TextAreaField, PasswordField, validators, BooleanField
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from datetime import datetime
-#from wtforms.validators import InputRequired, Email, Length
 import sqlite3
 import os
-#import db
 
 main = Blueprint('main', __name__)
 currentdirectory = os.path.dirname(os.path.abspath(__file__))
