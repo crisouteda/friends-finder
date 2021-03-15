@@ -5,7 +5,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from datetime import datetime
 #from wtforms.validators import InputRequired, Email, Length
-import friends_controller
 import sqlite3
 import os
 #import db
