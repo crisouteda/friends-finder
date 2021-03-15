@@ -1,0 +1,56 @@
+{% extends "layout.html" %}{% block content %}
+<div class="container">
+  <h1>Sign up</h1>
+  <br />
+  <form action="/signup" method="POST">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="username"
+        name="username"
+        aria-label="username"
+      />
+      <input
+        type="email"
+        class="form-control"
+        placeholder="email"
+        name="email"
+        aria-label="email"
+      />
+      <input
+        type="password"
+        class="form-control"
+        placeholder="password"
+        name="password"
+        aria-label="password"
+      />
+      <input type="submit" value="Sign Up" class="btn btn-info" />
+    </div>
+  </form>
+</div>
+<div class="container">
+    <h1>Login</h1>
+    <br />
+    <form action="/login" method="POST">
+      <div class="input-group mb-3">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="email"
+          name="email"
+          aria-label="email"
+        />
+        <input
+          type="password"
+          class="form-control"
+          placeholder="password"
+          name="password"
+          aria-label="password"
+        />
+        <input type="submit" value="Login" class="btn btn-info" />
+      </div>
+    </form>
+  </div>
+  </div>
+{% endblock %}

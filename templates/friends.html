@@ -1,0 +1,74 @@
+{% extends "layout.html" %}{% block content %}
+<div class="container">
+  <h1>Friends...</h1>
+  <br />
+  <form action="/friends" method="POST">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Name"
+        name="name"
+        aria-label="name"
+      />
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Age"
+        name="age"
+        aria-label="age"
+      />
+      <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+        <select
+          class="form-select"
+          id="inputGroupSelect01"
+          name="category"
+          value="category"
+        >
+          <option selected>Category</option>
+          <option>True</option>
+          <option>False</option>
+        </select>
+      </div>
+      <input type="submit" value="Add Friend" class="btn btn-info" />
+    </div>
+  </form>
+  <br /><br />
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Category</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for friend in friends %}
+      <h4>
+        <tr>
+          <th scope="row">{{ friend.id }}</th>
+          <td>{{ friend.name }}</td>
+          <td>{{ friend.age }}</td>
+          <td>{{ friend.category }}</td>
+          <td>
+            <a href="/update/{{friend.id}}" class="btn btn-outline-info btn-sm">
+              Update</a
+            >
+            <a
+              href="/delete/{{friend.id}}"
+              class="btn btn-outline-danger btn-sm"
+            >
+              Delete</a
+            >
+          </td>
+        </tr>
+      </h4>
+
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

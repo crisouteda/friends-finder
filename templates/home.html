@@ -1,0 +1,19 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Lets start</h1>
+    <p class="lead">(Cries in Spanish)</p>
+    <hr class="my-4" />
+    <p>Create, delete, find</p>
+    {% if current_user.is_anonymous: %}
+    <a class="btn btn-primary btn-lg" href="/signup" role="botton">
+      Let's start
+    </a>
+    {% else: %}
+    <a class="btn btn-primary btn-lg" href="/friends" role="botton">
+      Let's start
+    </a>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
